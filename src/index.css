@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-text-muted/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted/50;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-accent-primary/30 text-text-primary;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .glass {
+    @apply bg-bg-card/50 backdrop-blur-lg border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-accent bg-clip-text text-transparent;
+  }
+
+  .shimmer {
+    @apply bg-gradient-to-r from-bg-card via-bg-secondary to-bg-card bg-[length:200%_100%] animate-shimmer;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:border-accent-primary/30 hover:shadow-lg hover:shadow-accent-primary/10;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
